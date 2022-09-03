@@ -107,8 +107,7 @@ namespace PARCIAL___BLOQUE_I
 
         public string getData()
         {
-            return "Nombre completo: " + NOMBRE + " ---  Nota final: " + NOTA 
-                ;
+            return "Nombre completo: " + NOMBRE + " ---  Nota final: " + NOTA;
     }   }
 }   
     
