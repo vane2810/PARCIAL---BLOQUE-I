@@ -37,24 +37,28 @@ namespace PARCIAL___BLOQUE_I
                     Console.Write("Ingrese la nota del Parcial: ");
                     parcial = double.Parse(Console.ReadLine());
                     nota = Nota(nota1, nota2, parcial);
-                    
-                      if(nota >=6)
-                      {
+
+                    if (nota >= 6)
+                    {
                         Console.WriteLine("APROBADO");
 
-                      }
+                    }
                     else
                     {
                         Console.WriteLine("REPROBADO");
                     }
-                    
-                    
-                    
-                    Estudiantes _estudiantes = new Estudiantes() { Nombre = nombre, Nota = nota};
+
+
+                    Estudiantes _estudiantes = new Estudiantes() 
+                    { Nombre = nombre, 
+                        Nota = nota, 
+                        Nota1 = nota1,
+                        Nota2 = nota2,
+                        Parcial = parcial
+                    };
+
                     datos.Add(_estudiantes);
                     contador++;
-
-
                 }
 
                 Console.WriteLine("=========================== DATOS ================================");
@@ -76,16 +80,18 @@ namespace PARCIAL___BLOQUE_I
         static double Nota(double nota1, double nota2, double parcial)
         {
             return (nota1 * .3) + (nota2 * .3) + (parcial * .4);
-            
-        }  
 
-    }   
+        }
+
+    }
 
     public class Estudiantes
     {
         private string NOMBRE;
         private double NOTA;
-        private string ESTADO;
+        private double NOTA1;
+        private double NOTA2;
+        private double PARCIAL;
 
         public string Nombre
         {
@@ -99,16 +105,30 @@ namespace PARCIAL___BLOQUE_I
             set => NOTA = value;
         }
 
-        public string Estado
+        public double Nota1
         {
-            get => ESTADO;
-            set => ESTADO = value;
+            get => NOTA1;
+            set => NOTA1 = value;
         }
+
+        public double Nota2
+        {
+            get => NOTA2;
+            set => NOTA2 = value;
+        }
+
+        public double Parcial
+        {
+            get => PARCIAL;
+            set => PARCIAL = value;
+        }
+
 
         public string getData()
         {
             return "Nombre completo: " + NOMBRE + " ---  Nota final: " + NOTA;
-    }   }
-}   
-    
+        }
+    }
+}
+
 
