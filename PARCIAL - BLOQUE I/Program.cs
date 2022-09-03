@@ -18,7 +18,6 @@ namespace PARCIAL___BLOQUE_I
                 double nota2;
                 double parcial;
                 double nota;
-                string estado;
                 int contador = 0;
 
                 Console.Write("Ingrese el número de estudiantes: ");
@@ -39,18 +38,23 @@ namespace PARCIAL___BLOQUE_I
                     parcial = double.Parse(Console.ReadLine());
                     nota = Nota(nota1, nota2, parcial);
                     
-                    Estudiantes _estudiantes = new Estudiantes() { Nombre = nombre, Nota = nota };
-                    datos.Add(_estudiantes);
-                    contador++;
-                    
-                    if(nota >=6)
-                    {
+                      if(nota >=6)
+                      {
                         Console.WriteLine("APROBADO");
-                    }
+
+                      }
                     else
                     {
                         Console.WriteLine("REPROBADO");
                     }
+                    
+                    
+                    
+                    Estudiantes _estudiantes = new Estudiantes() { Nombre = nombre, Nota = nota};
+                    datos.Add(_estudiantes);
+                    contador++;
+
+
                 }
 
                 Console.WriteLine("=========================== DATOS ================================");
@@ -58,7 +62,6 @@ namespace PARCIAL___BLOQUE_I
                 {
                     Console.WriteLine(st.getData());
                 }
-
 
                 Console.WriteLine("------------------------------------------------------------------");
                 Console.WriteLine("¿Desea continuar?");
@@ -73,13 +76,10 @@ namespace PARCIAL___BLOQUE_I
         static double Nota(double nota1, double nota2, double parcial)
         {
             return (nota1 * .3) + (nota2 * .3) + (parcial * .4);
-        }
+            
+        }  
 
-        //Función (Estado aprobado o reprobado)
-        
-        
-        
-    }
+    }   
 
     public class Estudiantes
     {
@@ -97,7 +97,6 @@ namespace PARCIAL___BLOQUE_I
         {
             get => NOTA;
             set => NOTA = value;
-
         }
 
         public string Estado
@@ -108,8 +107,9 @@ namespace PARCIAL___BLOQUE_I
 
         public string getData()
         {
-            return "Nombre completo: " + NOMBRE + " ---  Nota final: " + NOTA + " --- Estado: " + ESTADO;
-        }
-}   }
+            return "Nombre completo: " + NOMBRE + " ---  Nota final: " + NOTA 
+                ;
+    }   }
+}   
     
 
